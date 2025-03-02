@@ -1,0 +1,94 @@
+body{
+    font-family: "Poppins", sans-serif;
+    background: url('image.png') no-repeat center center/cover;
+    color: black;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container{
+    background: rgba(255, 255, 255, 0.3); 
+    border: 3px solid #ffd700;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+    width: 350px;
+    backdrop-filter: blur(10px); 
+    transition: all 0.3s ease-in-out;
+}
+.container:hover{
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+}
+h1{
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #ffd700;
+    font-weight: bold;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+input[type="date"]{
+    padding: 10px;
+    border: 2px solid #ffd700; 
+    border-radius: 10px;
+    font-size: 16px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.4); 
+    color: black;
+    outline: none;
+    transition: border 0.3s ease-in-out;
+}
+input[type="date"]:focus{
+    border-color: #ffcc00;
+}
+input[type="submit"]{
+    background: linear-gradient(135deg, #8A2BE2, #FF6B6B); 
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+}
+input[type="submit"]:hover{
+    background: linear-gradient(135deg, #6A1B9A, #FF3B3B);
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+input[type="submit"]:focus,
+input[type="submit"]:active{
+    outline: none;
+    box-shadow: none;
+    transform: none;
+}
+#result{
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(45deg, #ff7eb3, #ff758c); 
+    padding: 15px;
+    border-radius: 12px;
+    border: 2px solid #ffcc00; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+    opacity: 1;
+    transform: translateY(10px);
+    display: none; 
+}
+.show{
+    opacity: 1;
+    transform: translateY(0);
+    display: block;
+}

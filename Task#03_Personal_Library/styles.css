@@ -1,0 +1,216 @@
+*{
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+:root{
+    --bg: #e4e4e4;
+    --bg-btn: #f4f4f4;
+    --bg-btn-hover: rgb(34, 34, 34);
+    --heading: rgb(102, 102, 102);
+    --text: rgb(38, 38, 38);
+    --book-color1: #0052A3;
+    --book-color2: #002A53;
+    --book-color3: #003568;
+    --book-alt: #8888;
+    --book-text: #ffab24;
+}
+
+i{
+    pointer-events: none;
+}
+
+body{
+    background: var(--bg);
+    padding: 0;
+    margin: 0;
+}
+
+#bg-container{
+    background-image: url(images/library-bg.jpeg);
+    background: linear-gradient(transparent, 70%, var(--bg)), url(images/library-bg.jpeg);
+    position: relative;
+    height: 200px;
+    background-size: cover;
+}
+
+#body-text{
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#btn-add-book, #submit, #btn-cancel{
+    border: none;
+    color: var(--text);
+    background-color: var(--bg-btn);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.2);
+}
+
+#btn-add-book:hover, #btn-cancel:hover, #submit:hover{
+    color: white;
+    background-color: var(--bg-btn-hover);
+}
+
+#form-container{
+    display: none;
+
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    font-size: 1rem;
+}
+
+#form-book{
+    border-radius: 1rem;
+    background-color: var(--bg);
+    margin: 15% auto; 
+    padding: 20px;
+    width: 25%;
+}
+
+input:not(#read){
+    height: 2rem;
+    width: 12rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.6rem;
+}
+
+input#read{
+    scale: 1.4;
+    margin-bottom: 1rem;
+}
+
+#checkbox{
+    cursor: pointer;
+    font-weight: bold;
+    line-height: 1.1;
+}
+
+
+#books-section{
+    position: relative;
+    margin: 0 auto;
+    max-width: 85vw;
+    margin-bottom: 5rem;
+}
+
+#books-header{
+    margin-top: 20px;
+    text-align: center;
+}
+
+#books-container{
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px
+    
+}
+
+.book{
+    position: relative;
+    width: 12rem;
+    height: 18rem;
+    border-radius: 0.8rem;
+    background: var(--book-color1);
+    background-image: linear-gradient(to right,var(--book-color2) 1.5rem,var(--book-color3) 2rem, transparent 2rem);  
+    transition: 0.2s;
+}
+
+.book-title, .book-author, .book-pages{
+    position: relative;
+    text-align: center;
+    text-overflow: clip;
+    left: 2.5rem;
+    max-width: 8rem;
+    top: 4rem;
+    color: var(--book-text);
+}
+
+.book-title{
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.book-author{
+    margin-top: 0.6rem;
+    font-size: 0.8rem;
+}
+
+.book-pages{
+    display: none;
+    top: 9rem;
+    background-color: var(--book-alt);
+    padding: 1rem;
+    border-radius: 1rem;
+    z-index: 3;
+}
+
+.btn-read, .btn-remove{
+    display: none;
+    position:absolute; 
+    top:0.1rem; 
+    z-index: 2;
+    
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.8rem;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+    text-decoration: none;
+    background: none;
+    color: white;
+}
+
+.btn-read{
+    left: 0.1rem;
+}
+
+.btn-remove{
+    right: 0.1rem;
+}
+
+/* Hover effects on book items */
+.book:hover{
+    outline: 3px solid white;
+}
+
+.book:hover .btn-read{
+    display: inline-flex;
+}
+
+.book:hover .btn-remove{
+    display: inline-flex;
+}
+
+.book:hover .book-pages{
+    display: block;
+}
+
+footer {
+    background: linear-gradient(to bottom, #555454 #e0e0e0, #555454); 
+    color: black;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 14px;
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.2);
+}
